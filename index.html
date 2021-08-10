@@ -14,8 +14,18 @@
     </style>
 </head>
 <body>
+    <div id="parent" style="width: 50%; height: 50%;">
+        <script>
+            window.alert("Creating new node");
+            let div = document.createElement('div');
+            div.innerHTML = "Hello Udacity";
+            let parent = document.querySelector('#parent');
+            parent.appendChild(div);
+        </script>
+    </div>
+        
     <p> Welcome to a dynamic bar chart</p>
-    <div id="container" style="width: 100%; height: 100%">
+    <div id="container" style="width: 50%; height: 50%">
         <script>
             //-- chart code -->
             anychart.onDocumentReady(function(){
@@ -45,7 +55,9 @@
                 chart.draw();
 
             });
+            
         </script>
+        
     </div>
     
 </body>
