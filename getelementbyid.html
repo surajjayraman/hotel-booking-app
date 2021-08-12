@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent-id">
+        <p>hello word1</p>
+        <p id="test1">hello word2</p>
+        <p>hello word3</p>
+        <p>hello word4</p>
+    </div>
+    <script>
+        let parentDOM = document.getElementById('parent-id');
+        let test1 = document.getElementById('test1');
+        console.log(test1);
+        //parentDOM.getElementById would throw error
+        //Uncaught TypeError: parentDOM.getElementById is not a function
+        let element = document.createElement('div');
+        element.id = 'testqq';
+        let parentDiv = test1.parentNode;
+        console.log(parentDiv);
+        parentDiv.insertBefore(element,test1);
+        let e1 = document.getElementById(element.id);
+        console.log(e1);
+    </script>
+</body>
+</html>
