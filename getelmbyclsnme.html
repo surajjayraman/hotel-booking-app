@@ -13,10 +13,33 @@
         <p>hello world 3</p>
         <p>hello world 4</p>
     </div>
+    <span class="orange fruit">Orange Fruit</span>
+    <span class="orange juice">Orange Juice</span>
+    <span class="apple juice">Apple Juice</span>
+    <span class="foo bar">Something Random</span>
+    <textarea id="resultArea" style="width:98%;height:7em">
+    
+    </textarea>  
     <script>
         //Get the first element whose class is 'test'
         let elmtest = document.getElementsByClassName('test');
         console.log(elmtest[0]);
+        //only selects elements that have both given classes
+        let allOranjeJuiceByClass = document.getElementsByClassName('orange juice');
+        console.log(allOranjeJuiceByClass);
+        let result = "document.getElementsByClassName('orange juice')";
+        for (let i = 0; i < allOranjeJuiceByClass.length; i++){
+            result += "\n " + allOranjeJuiceByClass[i].textContent;
+        }
+        //set result value to the text area
+        document.getElementById('resultArea').value = result;
+        let tags = document.getElementsByTagName('span');
+        console.log(tags);
+        let tagresult = "document.getElementsByTagName('span')";
+        for (let j = 0; j < tags.length; j++){
+            tagresult += "\n " + tags[j].textContent;
+        }
+        document.getElementById('resultArea').value = result + "\n" + tagresult;
     </script>
 </body>
 </html>
