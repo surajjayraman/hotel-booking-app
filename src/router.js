@@ -16,6 +16,7 @@ const API = "api";
 router.get(`/${API}/search`, async(req, res) => {
   try {
     const { keyword } = req.query;
+    console.log("City Search",keyword);
     const response = await amadeus.referenceData.locations.get({
       keyword,
       subType: Amadeus.location.city,
@@ -30,6 +31,7 @@ router.get(`/${API}/search`, async(req, res) => {
 router.get(`/${API}/hotels`, async(req, res) => {
   try {
     const { cityCode, checkInDate, checkOutDate } = req.query;
+    console.log("Querying hotels",req.query);
     const response = await amadeus.shopping.hotelOffers.get({
       cityCode,
       checkInDate,
@@ -45,6 +47,7 @@ router.get(`/${API}/hotels`, async(req, res) => {
 router.get(`/${API}/offers`, async(req, res) => {
   try {
     const { hotelId } = req.query;
+    console.log("Querying offers",req.query);
     const response = await amadeus.shopping.hotelOffersByHotel.get({
       hotelId,
     });
