@@ -5,6 +5,7 @@ import { DateFilters } from "./DateFilters";
 import { Hotels } from "./Hotels";
 import { BookingDialog } from "./BookingDialog";
 import dayjs from "dayjs";
+import SearchRoot from "./search-root";
 
 const useStyles = makeStyles({
   container: {
@@ -43,6 +44,7 @@ const App = () => {
         />
       </div>
       <BookingDialog offerId={offerId} setOfferId={setOfferId} />
+      <SearchRoot />
     </Container>
   );
 };
